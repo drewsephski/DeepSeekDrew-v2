@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DeepSeekDrew - Pioneering AI-Driven Discovery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Color Scheme */
+    :root {
+      --primary-color: #1e3a8a;
+      --secondary-color: #0369a1;
+      --light-bg: #f4f4f4;
+      --dark-bg: #1f2937;
+      --light-text: #f4f4f4;
+      --dark-text: #333;
+    }
+
+    /* Global Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--light-bg);
+      color: var(--dark-text);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 0;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+      color: var(--light-text);
+      padding: 40px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header h1 {
+      margin: 0 0 20px;
+      font-size: 3rem;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    nav ul {
+      padding: 0;
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      animation: slideIn 1s ease-in-out;
+    }
+
+    @keyframes slideIn {
+      0% {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    nav ul li {
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      color: var(--light-text);
+      text-decoration: none;
+      font-weight: bold;
+      position: relative;
+    }
+
+    nav ul li a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: var(--light-text);
+      bottom: -5px;
+      left: 0;
+      transition: width 0.3s ease-in-out;
+    }
+
+    nav ul li a:hover:after {
+      width: 100%;
+    }
+
+    /* Sections */
+    section {
+      padding: 60px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    section h2 {
+      text-align: center;
+      color: var(--primary-color);
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .product-features,
+    .blog-posts {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      animation: scaleIn 1s ease-in-out;
+    }
+
+    @keyframes scaleIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .feature,
+    .post {
+      flex: 1 1 300px;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .feature:hover,
+    .post:hover {
+      transform: translateY(-10px);
+    }
+
+    .feature h3,
+    .post h3 {
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+
+    /* Contact Form */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      max-width: 500px;
+      padding: 12px 16px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      transition: border-color 0.3s ease-in-out;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--primary-color);
+      outline: none;
+    }
+
+    .contact-form button {
+      background-color: var(--primary-color);
+      color: var(--light-text);
+      border: none;
+      padding: 12px 24px;
+      border-radius: 4px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .contact-form button:hover {
+      background-color: var(--secondary-color);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--dark-bg);
+      color: var(--light-text);
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    footer a {
+      color: var(--light-text);
+      text-decoration: none;
+      transition: color 0.3s ease-in-out;
+    }
+
+    footer a:hover {
+      color: var(--secondary-color);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>DeepSeekDrew</h1>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#customers">Customers</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <div class="content">
+        <p>DeepSeekDrew is an innovative AI company dedicated to revolutionizing the way people interact with and discover information. Our mission is to leverage the power of advanced natural language processing and machine learning to create intelligent search and discovery tools that empower users to uncover insights and make informed decisions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="products">
+    <div class="container">
+      <h2>Our Products</h2>
+      <div class="product-features">
+        <div class="feature">
+          <h3>Contextual Search</h3>
+          <p>Our advanced language models and knowledge graph dive deep into user queries, understanding intent and surfacing the most relevant information.</p>
+        </div>
+        <div class="feature">
+          <h3>Personalized Recommendations</h3>
+          <p>The platform learns from user behavior to provide tailored suggestions, helping users discover valuable insights.</p>
+        </div>
+        <div class="feature">
+          <h3>Domain-Specific Expertise</h3>
+          <p>DeepSeekDrew is built with specialized knowledge bases, enabling users to explore niche topics with confidence.</p>
+        </div>
+        <div class="feature">
+          <h3>Seamless Integration</h3>
+          <p>Seamlessly integrates with existing workflows, allowing users to access DeepSeekDrew's capabilities within their preferred tools.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="customers">
+    <div class="container">
+      <h2>Our Customers</h2>
+      <div class="content">
+        <p>Our primary customers include enterprise organizations in healthcare, finance, and scientific research, where accurate information discovery is critical. We're proud to work with leading institutions to empower their decision-making processes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="blog" class="blog">
+    <div class="container">
+      <h2>Our Blog</h2>
+      <div class="blog-posts">
+        <div class="post">
+          <h3>Revolutionizing Healthcare with AI</h3>
+          <p>Explore how AI-driven search is transforming the healthcare industry, from research to patient care.</p>
+        </div>
+        <div class="post">
+          <h3>AI in Finance: The Future of Decision-Making</h3>
+          <p>Discover how AI is enhancing financial services by providing deeper insights and better risk management.</p>
+        </div>
+        <div class="post">
+          <h3>The Role of AI in Scientific Research</h3>
+          <p>Learn about the impact of AI in accelerating scientific discoveries and innovations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Your message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 DeepSeekDrew. All Rights Reserved.</p>
+      <p>
+        <a href="#">LinkedIn</a> |
+        <a href="#">Twitter</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Add smooth scrolling to navigation links
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(e.target.getAttribute('href'));
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      });
+    });
+
+    // Add hover effect to navigation links
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('mouseover', () => {
+        link.style.transform = 'translateY(-2px)';
+        link.style.textShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
+      });
+      link.addEventListener('mouseout', () => {
+        link.style.transform = 'translateY(0)';
+        link.style.textShadow = 'none';
+      });
+    });
+
+    // Add animation to contact form submission
+    document.querySelector('.contact-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      e.target.classList.add('submitted');
+      setTimeout(() => {
+        e.target.classList.remove('submitted');
+        e.target.reset();
+      }, 2000);
+    });
+  </script>
+</body>
+</html>
